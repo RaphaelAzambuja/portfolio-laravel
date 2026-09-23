@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    --font-heading: "Plus Jakarta Sans", sans-serif;
+    --font-body: "Inter", sans-serif;
+
+    --color-60: #FCFDFD;
+
+    /* --color-30: #171717; */
+    /* --color-10: #E60023; */
+
+    --color-30: #213547;
+    --color-10: #42B883;
+}
+
+@layer components {
+    .site-container {
+        @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12;
+    }
+
+    .site-section {
+        @apply py-24 md:py-32;
+    }
+}
