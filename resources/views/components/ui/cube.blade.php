@@ -40,7 +40,7 @@
             },
         }"
         :class="initializeAnimation ? 'animate-cube' : ''"
-        class="text-10"
+        class="text-10 -z-50"
         width="{{ $size }}"
         height="{{ round($size * 1.152) }}"
         viewBox="0 0 46 53"
