@@ -106,10 +106,9 @@
 
         <div class="site-container">
 
-            <div class="site-container">
                 <div class="mx-auto mb-14 max-w-2xl text-center">
                     <span class="text-sm font-bold uppercase tracking-wider text-10">
-                        Projetos
+                        Produtos
                     </span>
                     <h2 class="mt-2 text-4xl font-extrabold text-30 sm:text-5xl">
                         Projetos que saíram do papel.
@@ -120,69 +119,34 @@
                         em soluções reais.
                     </p>
                 </div>
-            </div>
 
 
             <div class="grid gap-x-10 gap-y-16 md:grid-cols-2 lg:gap-x-16 lg:gap-y-24">
-
-                <x-ui.project-showcase {{-- image="" --}}
-                    imageAlt="Projeto exemplo"
-                    category="Sistema web"
-                    year="2026" title="Sistema de gestão"
-                    description="Sistema desenvolvido para organizar processos e facilitar a operação da empresa."
-                    href="#"
-                    :participants="[
-                        ['name' => 'Raphael Azambuja', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                        ['name' => 'Nicolas Pereira', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                        ['name' => 'João Silva', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                    ]" />
-                <x-ui.project-showcase {{-- image="" --}}
-                    imageAlt="Projeto exemplo"
-                    category="Sistema web"
-                    year="2026" title="Sistema de gestão"
-                    description="Sistema desenvolvido para organizar processos e facilitar a operação da empresa."
-                    href="#"
-                    :participants="[
-                        ['name' => 'Raphael Azambuja', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                        ['name' => 'Nicolas Pereira', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                        ['name' => 'João Silva', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                    ]" />
-                <x-ui.project-showcase {{-- image="" --}}
-                    imageAlt="Projeto exemplo"
-                    category="Sistema web"
-                    year="2026" title="Sistema de gestão"
-                    description="Sistema desenvolvido para organizar processos e facilitar a operação da empresa."
-                    href="#"
-                    :participants="[
-                        ['name' => 'Raphael Azambuja', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                        ['name' => 'Nicolas Pereira', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                        ['name' => 'João Silva', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                    ]" />
-                <x-ui.project-showcase {{-- image="" --}}
-                    imageAlt="Projeto exemplo"
-                    category="Sistema web"
-                    year="2026" title="Sistema de gestão"
-                    description="Sistema desenvolvido para organizar processos e facilitar a operação da empresa."
-                    href="#"
-                    :participants="[
-                        ['name' => 'Raphael Azambuja', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                        ['name' => 'Nicolas Pereira', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                        ['name' => 'João Silva', 'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png'],
-                    ]" />
-
-
+                @foreach ($projects as $project)
+                    <x-ui.project-showcase
+                        :image="$project->image"
+                        :imageAlt="$project->image_alt"
+                        :category="$project->category"
+                        :year="$project->year"
+                        :title="$project->title"
+                        :description="$project->description"
+                        :href="$project->application_url"
+                        :participants="$project->partners->map(fn ($partner) => [
+                            'name' => $partner->name,
+                            'image' => $partner->image
+                        ])" />
+                @endforeach
             </div>
 
             <div class="mt-12 flex justify-center gap-4">
                 <x-ui.button href="" variant="secondary">
-                    Ver produtos →
+                    Outros produtos →
                 </x-ui.button>
 
                 <x-ui.button href="#contato">
                     Adoraria tirar um projeto do papel
                 </x-ui.button>
             </div>
-
         </div>
     </section>
 
@@ -190,7 +154,6 @@
     {{-- Posts --}}
     <section id="posts" class="site-section relative overflow-hidden">
 
-        {{-- Cubes --}}
         <x-ui.cube class="top-[8%] right-[6%]" :delay="700" :size="30" />
         <x-ui.cube class="top-[28%] left-[3%]" :delay="2100" :size="42" />
         <x-ui.cube class="top-[62%] right-[4%]" :delay="1500" :size="24" />
@@ -200,12 +163,15 @@
 
             {{-- Título --}}
             <div class="mb-14 text-center p-4 self-center">
+                <span class="text-sm font-bold uppercase tracking-wider text-10">
+                    blog
+                </span>
                 <h2 class="text-4xl font-extrabold text-30 sm:text-5xl">
                     O que aprendi construindo.
                 </h2>
 
                 <p class="mt-4 text-md text-30/75">
-                    Algumas soluções que transformaram ideias em experiências reais.
+                    Sonhos criam ideias, ideias nos levam a caminhos, e cada caminho percorrido se transforma em experiência.
                 </p>
             </div>
 
@@ -220,7 +186,7 @@
 
         <div class="mt-12 flex justify-center">
             <x-ui.button href="#contato" variant="outline">
-                Estou com sorte ☆
+                Ver mais posts ☆
             </x-ui.button>
         </div>
 
@@ -249,8 +215,8 @@
                 </p>
             </div>
 
-            <div x-data="{ open: null }" class="mx-auto max-w-4xl">
-                <div class="border-t bg-60 border-30/25">
+            <div x-data="{ open: null }" class="mx-auto max-w-6xl">
+                <div class="border-t border-30/25">
                     @foreach ($faqs as $index => $faq)
                         <x-ui.faq :question="$faq['question']" :index="$index">
                             {{ $faq['answer'] }}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
+use App\Models\Project;
 use App\Models\Service;
 
 class HomeController extends Controller
@@ -11,7 +12,9 @@ class HomeController extends Controller
     {
         $services = $this->getServices();
         $faqs = $this->getFaqs();
-        return view('index', compact('services', 'faqs'));
+        $projects = $this->getFeaturedProjects();
+
+        return view('index', compact('services', 'faqs', 'projects'));
     }
 
     private function getServices()
@@ -22,5 +25,10 @@ class HomeController extends Controller
     private function getFaqs()
     {
         return Faq::all();
+    }
+
+    private function getFeaturedProjects()
+    {
+        return Project::with('partners')->where('featured', true)->get();
     }
 }

@@ -12,7 +12,7 @@
 <article {{ $attributes->merge(['class' => 'group']) }}>
     {{-- Imagem --}}
     <div class="relative overflow-hidden rounded-lg bg-30/5">
-        <div class="aspect-[16/10] overflow-hidden">
+        <div class="aspect-16/10 overflow-hidden">
             <img
                 src="{{ $image }}"
                 alt="{{ $imageAlt }}"
@@ -51,7 +51,7 @@
             variant="outline"
             size="sm"
         >
-            Ver projeto →
+            Ver produto →
         </x-ui.button>
 
         @if (count($participants))
