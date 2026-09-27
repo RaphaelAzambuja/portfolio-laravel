@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             FaqSeeder::class,
             PartnerSeeder::class,
             ProjectSeeder::class,
+            PostSeeder::class,
         ]);
     }
 }

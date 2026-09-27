@@ -1,7 +1,7 @@
 @props([
     'link',
     'text',
-    'section' => null,
+    'active' => 'false',
 ])
 
 <a
@@ -10,7 +10,7 @@
     {{ $attributes->merge([
         'class' => 'group relative px-1 text-sm font-semibold transition-colors duration-200 md:text-md',
     ]) }}
-    :class="activeSection === '{{ $section }}'
+    :class="{{ $active }}
         ? 'text-10'
         : 'text-30 hover:text-10'"
 >
@@ -18,7 +18,7 @@
 
     <span
         class="absolute -bottom-1 left-0 h-px bg-10 transition-all duration-200"
-        :class="activeSection === '{{ $section }}'
+        :class="{{ $active }}
             ? 'w-full'
             : 'w-0 group-hover:w-full'"
     ></span>
