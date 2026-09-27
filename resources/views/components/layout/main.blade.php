@@ -23,7 +23,6 @@
         {{ $slot }}
     </main>
 
-    <x-cta.floating-action-button />
     <x-layout.footer />
 
     @livewireScripts

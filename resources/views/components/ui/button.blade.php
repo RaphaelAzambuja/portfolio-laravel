@@ -24,9 +24,9 @@
     ];
 
     $sizes = [
-        'sm' => 'px-3 py-1 text-[11px] md:px-3.5 md:py-1.5 md:text-xs',
-        'md' => 'px-3.5 py-1.5 text-xs md:px-4 md:py-1.5 md:text-sm',
-        'lg' => 'px-5 py-2 text-sm md:px-5 md:py-2 md:text-base',
+        'sm' => 'min-w-32 px-3 py-1 text-[11px] md:min-w-36 md:px-3.5 md:py-1.5 md:text-xs',
+        'md' => 'min-w-32 px-3.5 py-1.5 text-xs md:min-w-36 md:px-4 md:py-1.5 md:text-sm',
+        'lg' => 'min-w-32 px-5 py-2 text-sm md:min-w-36 md:px-5 md:py-2 md:text-base',
     ];
 
     $variant = $variants[$variant] ?? $variants['primary'];
@@ -35,8 +35,9 @@
 
 <a
     {{ $attributes->merge([
-        'class' => 'group relative inline-flex min-w-32 rounded-md focus:outline-none sm:min-w-36 ' . $variant['wrapper'],
-    ]) }}>
+        'class' => 'group relative inline-flex rounded-md focus:outline-none cursor-pointer ' . $variant['wrapper'],
+    ]) }}
+>
     <span
         class="
             inline-flex w-full items-center justify-center
@@ -49,7 +50,8 @@
             group-hover:-translate-y-1
             group-active:-translate-x-1
             group-active:-translate-y-1
-        ">
+        "
+    >
         {{ $slot }}
     </span>
 </a>

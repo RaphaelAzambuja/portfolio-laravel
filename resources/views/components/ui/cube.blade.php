@@ -26,7 +26,7 @@
 
 <div
     {{ $attributes->merge([
-        'class' => 'pointer-events-none absolute',
+        'class' => 'pointer-events-none absolute -z-50',
     ]) }}
 >
     <svg
