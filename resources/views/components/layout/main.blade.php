@@ -17,13 +17,17 @@
 
 <body class="bg-60 text-30 antialiased">
 
+    @if ($header ?? true)
     <x-layout.header />
+    @endif
 
     <main class="font-body">
         {{ $slot }}
     </main>
 
+    @if ($footer ?? true)
     <x-layout.footer />
+    @endif
 
     @livewireScripts
 </body>
