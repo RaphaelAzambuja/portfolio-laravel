@@ -1,58 +1,6 @@
 <header
     x-data="{
         menuOpen: false,
-
-        activeSection: @js(
-            request()->routeIs('blog.index', 'blog.show')
-                ? 'posts'
-                : 'hero'
-        ),
-
-        init() {
-            this.updateActiveSection();
-
-            window.addEventListener('scroll', () => {
-                this.updateActiveSection();
-            }, { passive: true });
-        },
-
-        updateActiveSection() {
-            // Páginas internas
-            if (@js(request()->routeIs('blog.index', 'blog.show'))) {
-                this.activeSection = 'posts';
-                return;
-            }
-
-            // Home
-            const sections = [
-                'hero',
-                'services',
-                'projects',
-                'posts',
-                'faq',
-                'contact'
-            ];
-
-            const offset = 100;
-
-            let currentSection = 'hero';
-
-            sections.forEach(id => {
-                const section = document.getElementById(id);
-
-                if (!section) {
-                    return;
-                }
-
-                const top = section.getBoundingClientRect().top;
-
-                if (top <= offset) {
-                    currentSection = id;
-                }
-            });
-
-            this.activeSection = currentSection;
-        }
     }"
     class="fixed top-0 z-50 w-full border border-30/10 bg-60/75 backdrop-blur"
     @keydown.escape.window="menuOpen = false"
@@ -74,51 +22,54 @@
             </span>
         </a>
 
+
         {{-- Navegação desktop --}}
         <nav class="hidden items-center justify-center gap-10 lg:flex">
 
             <x-layout.nav-item
-                link="{{ route('home') }}#hero"
+                link="{{ route('home') }}"
                 text="Início"
-                active="activeSection === 'hero'"
+                :active="request()->routeIs('home')"
             />
 
             <x-layout.nav-item
-                link="{{ route('home') }}#services"
-                text="Serviços"
-                active="activeSection === 'services'"
+                link="{{ route('about.index') }}"
+                text="Sobre"
+                :active="request()->routeIs('about.*')"
             />
 
             <x-layout.nav-item
-                link="{{ route('home') }}#projects"
+                link="{{ route('projects.index') }}"
                 text="Produtos"
-                active="activeSection === 'projects'"
+                :active="request()->routeIs('projects.*')"
             />
 
             <x-layout.nav-item
                 link="{{ route('blog.index') }}"
                 text="Blog"
-                active="activeSection === 'posts'"
+                :active="request()->routeIs('blog.*')"
             />
 
             <x-layout.nav-item
-                link="{{ route('home') }}#faq"
-                text="FAQ"
-                active="activeSection === 'faq'"
+                link="{{ route('contact.index') }}"
+                text="Contato"
+                :active="request()->routeIs('contact.*')"
             />
 
         </nav>
 
+
         {{-- Orçamento --}}
         <div class="hidden lg:block">
+
             <x-ui.button
-                href="https://api.whatsapp.com/send/?phone=554899341106"
-                target="_blank"
+                href="{{ route('contact.index') }}"
                 variant="outline"
                 size="sm"
             >
                 Solicitar orçamento
             </x-ui.button>
+
         </div>
 
         {{-- Hamburger --}}
@@ -168,6 +119,7 @@
 
     </div>
 
+
     {{-- Menu mobile --}}
     <aside
         x-show="menuOpen"
@@ -186,41 +138,42 @@
             <div class="flex flex-col items-center gap-8">
 
                 <x-layout.nav-item
-                    link="{{ route('home') }}#hero"
+                    link="{{ route('home') }}"
                     text="Início"
-                    active="activeSection === 'hero'"
+                    :active="request()->routeIs('home')"
                     class="text-base"
                 />
 
                 <x-layout.nav-item
-                    link="{{ route('home') }}#services"
-                    text="Serviços"
-                    active="activeSection === 'services'"
+                    link="{{ route('about.index') }}"
+                    text="Sobre"
+                    :active="request()->routeIs('about.*')"
                     class="text-base"
                 />
 
                 <x-layout.nav-item
-                    link="{{ route('home') }}#projects"
+                    link="{{ route('projects.index') }}"
                     text="Produtos"
-                    active="activeSection === 'projects'"
+                    :active="request()->routeIs('projects.*')"
                     class="text-base"
                 />
 
                 <x-layout.nav-item
                     link="{{ route('blog.index') }}"
                     text="Blog"
-                    active="activeSection === 'posts'"
+                    :active="request()->routeIs('blog.*')"
                     class="text-base"
                 />
 
                 <x-layout.nav-item
-                    link="{{ route('home') }}#faq"
-                    text="FAQ"
-                    active="activeSection === 'faq'"
+                    link="{{ route('contact.index') }}"
+                    text="Contato"
+                    :active="request()->routeIs('contact.*')"
                     class="text-base"
                 />
 
             </div>
+
 
             {{-- CTA --}}
             <div class="mt-auto w-full pt-10">
@@ -228,8 +181,7 @@
                 <div class="mb-6 border-t border-30/10"></div>
 
                 <x-ui.button
-                    href="https://api.whatsapp.com/send/?phone=554899341106"
-                    target="_blank"
+                    href="{{ route('contact.index') }}"
                     variant="primary"
                     class="w-full justify-center"
                 >
@@ -240,4 +192,5 @@
 
         </nav>
     </aside>
+
 </header>

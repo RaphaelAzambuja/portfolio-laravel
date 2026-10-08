@@ -1,6 +1,7 @@
 @props([
     'variant' => 'primary',
     'size' => 'md',
+    'type' => null,
 ])
 
 @php
@@ -31,11 +32,19 @@
 
     $variant = $variants[$variant] ?? $variants['primary'];
     $size = $sizes[$size] ?? $sizes['md'];
+
+    $tag = $attributes->has('href') ? 'a' : 'button';
 @endphp
 
-<a
-    {{ $attributes->merge([
-        'class' => 'group relative inline-flex rounded-md focus:outline-none cursor-pointer ' . $variant['wrapper'],
+<{{ $tag }}
+    @if($tag === 'a')
+        href="{{ $attributes->get('href') }}"
+    @else
+        type="{{ $type ?? 'button' }}"
+    @endif
+
+    {{ $attributes->except('href')->merge([
+        'class' => 'group relative inline-flex cursor-pointer rounded-md focus:outline-none ' . $variant['wrapper'],
     ]) }}
 >
     <span
@@ -54,4 +63,4 @@
     >
         {{ $slot }}
     </span>
-</a>
+</{{ $tag }}>
