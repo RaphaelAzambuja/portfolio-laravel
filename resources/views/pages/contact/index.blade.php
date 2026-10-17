@@ -23,26 +23,8 @@
                     A partir disso, podemos entender o problema, conversar
                     sobre possibilidades e encontrar a melhor solução para o seu negócio.
                 </p>
-
-                <div class="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-30/75">
-                    <div class="flex items-center gap-3">
-                        <x-ui.check-icon />
-                        <span>Conversa inicial sem compromisso</span>
-                    </div>
-
-                    <div class="flex items-center gap-3">
-                        <x-ui.check-icon />
-                        <span>Soluções pensadas para sua necessidade</span>
-                    </div>
-
-                    <div class="flex items-center gap-3">
-                        <x-ui.check-icon />
-                        <span>Orçamento alinhado ao projeto</span>
-                    </div>
-                </div>
             </div>
 
-            {{-- Formulário --}}
             <div class="relative w-full max-w-3xl rounded-2xl border border-30/20 bg-60 p-6 shadow-sm sm:p-8">
                 <livewire:forms.contact-form />
             </div>

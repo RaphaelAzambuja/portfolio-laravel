@@ -12,7 +12,7 @@
 <article {{ $attributes->merge(['class' => 'group']) }}>
     {{-- Imagem --}}
     <div class="relative overflow-hidden rounded-lg bg-30/5">
-        <div class="aspect-16/10 overflow-hidden">
+        <div class="aspect-[16/9] overflow-hidden">
             <img
                 src="{{ $image }}"
                 alt="{{ $imageAlt }}"
@@ -22,7 +22,7 @@
     </div>
 
     {{-- Conteúdo --}}
-    <div class="mt-4">
+    <div class="mt-3">
         <div class="flex items-center gap-2">
             <span class="text-[10px] font-bold uppercase tracking-wider text-10">
                 {{ $category }}
@@ -35,17 +35,17 @@
             </span>
         </div>
 
-        <h3 class="mt-1 line-clamp-2 text-xl font-extrabold leading-tight text-30 transition-colors duration-200 group-hover:text-10">
+        <h3 class="mt-1 line-clamp-2 text-lg font-extrabold leading-tight text-30 transition-colors duration-200 group-hover:text-10">
             {{ $title }}
         </h3>
 
-        <p class="mt-2 min-h-10 line-clamp-2 text-xs leading-5 text-30/65">
+        <p class="mt-1 line-clamp-2 text-xs leading-5 text-30/65">
             {{ $description }}
         </p>
     </div>
 
     {{-- Ações --}}
-    <div class="mt-3 flex w-full items-center justify-between">
+    <div class="mt-2 flex w-full items-center justify-between">
         <x-ui.button
             href="{{ $href }}"
             variant="outline"
@@ -79,3 +79,4 @@
         @endif
     </div>
 </article>
+
