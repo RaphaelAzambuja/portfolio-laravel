@@ -44,7 +44,7 @@
                     <img
                         src="{{ $post->image }}"
                         alt="{{ $post->image_alt ?? $post->title }}"
-                        class="h-auto max-h-[500px] w-full object-cover"
+                        class="h-auto max-h-125 w-full object-cover"
                     >
                 </figure>
             @endif
