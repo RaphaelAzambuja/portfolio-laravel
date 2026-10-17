@@ -29,7 +29,7 @@ new class extends Component {
 
 <form wire:submit='makeMessage' class="space-y-6">
 
-    <x-forms.inputs.input
+    <x-inputs.input
     name="name"
     label="Seu nome"
     placeholder="Como posso te chamar?"
@@ -37,14 +37,14 @@ new class extends Component {
     wire:model='name'
     />
 
-    <x-forms.inputs.phone
+    <x-inputs.phone
         name="phone"
         label="WhatsApp"
 
         wire:model='phone'
         />
 
-        <x-forms.inputs.select
+        <x-inputs.select
         name="solution"
         label="O que você precisa?"
 
@@ -85,9 +85,9 @@ new class extends Component {
         <option value="nao-sei">
             Ainda não sei
         </option>
-    </x-forms.inputs.select>
+    </x-inputs.select>
 
-    <x-forms.inputs.textarea
+    <x-inputs.textarea
     name="message"
     label="Conte um pouco sobre a ideia"
     rows="6"
