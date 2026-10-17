@@ -16,7 +16,7 @@
         ],
         'outline' => [
             'wrapper' => 'border border-10',
-            'content' => 'text-10 bg-60 ring-1 ring-10 ring-offset-1',
+            'content' => 'text-10 bg-60 ring-1 ',
         ],
         'ghost' => [
             'wrapper' => 'border-transparent',
@@ -44,7 +44,7 @@
     @endif
 
     {{ $attributes->except('href')->merge([
-        'class' => 'group relative inline-flex cursor-pointer rounded-md focus:outline-none ' . $variant['wrapper'],
+        'class' => 'group relative inline-flex cursor-pointer rounded-md focus:outline-none w-fit ' . $variant['wrapper'],
     ]) }}
 >
     <span

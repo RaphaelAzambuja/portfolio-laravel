@@ -39,12 +39,12 @@
             <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row">
                 <x-ui.button href="{{ route('projects.index') }}" variant="primary"
                     class="w-48 justify-center whitespace-nowrap">
-                    Vamos conversar
+                    Conhecer os produtos
                 </x-ui.button>
 
                 <x-ui.button href="{{ route('contact.index') }}" variant="secondary"
                     class="w-48 justify-center whitespace-nowrap">
-                    Conhecer os produtos
+                    Vamos conversar
                 </x-ui.button>
             </div>
         </div>
@@ -328,7 +328,7 @@
         </div>
 
         <div class="mt-10 flex justify-center sm:mt-12">
-            <x-ui.button href="{{ route('blog.index') }}" variant="outline">
+            <x-ui.button href="{{ route('blog.index') }}" >
                 Ver todos os artigos
             </x-ui.button>
         </div>

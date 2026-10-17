@@ -8,9 +8,9 @@
     --font-heading: "Plus Jakarta Sans", sans-serif;
     --font-body: "Inter", sans-serif;
 
-    --color-60: #FCFDFD;
-    --color-30: #213547;
-    --color-10: #42B883;
+    --color-60: #091A23;
+    --color-30: #FFFFFF;
+    --color-10: #FF4438;
 }
 
 @layer components {

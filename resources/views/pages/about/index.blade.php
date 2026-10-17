@@ -83,7 +83,7 @@
                     </p>
 
                     <p>
-                        Dei aulas, prestei suporte, fiz manutenção, programei e passei por diferentes trabalhos.
+                        Iniciei a faculdade, dei aulas, prestei suporte, fiz manutenção, programei e passei por diferentes trabalhos.
                         Fui conhecendo o mercado e, aos poucos, comecei a perceber que havia
                         <span class="font-bold text-30">algo faltando.</span>
                     </p>

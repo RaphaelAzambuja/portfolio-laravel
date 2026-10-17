@@ -12,7 +12,7 @@
             </p>
         </div>
 
-        <x-ui.button variant="secondary" href="{{ route('blog.show', $slug) }}">
+        <x-ui.button variant="outline" href="{{ route('blog.show', $slug) }}">
             Ver post →
         </x-ui.button>
 

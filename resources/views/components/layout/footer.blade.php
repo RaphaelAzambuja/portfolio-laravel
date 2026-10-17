@@ -54,7 +54,7 @@
                     Tem uma ideia ou problema para resolver?
                 </p>
 
-                <x-ui.button href="https://api.whatsapp.com/send/?phone=554899341106" target="_blank" variant="outline"
+                <x-ui.button href="https://api.whatsapp.com/send/?phone=554899341106" target="_blank" variant="secondary"
                     size="sm" class="mt-5">
                     Falar comigo →
                 </x-ui.button>
