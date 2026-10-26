@@ -89,7 +89,7 @@
 
         <div class="mt-8 flex flex-col items-center gap-4 sm:mt-10 sm:flex-row">
             <x-ui.button href="{{ route('projects.index') }}">
-                Ver mais soluções
+                Ver mais cases
             </x-ui.button>
             <x-ui.button variant="secondary" href="{{ route('contact.index') }}">
                 Encontrar a solução ideal

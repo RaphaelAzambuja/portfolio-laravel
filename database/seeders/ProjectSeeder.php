@@ -10,9 +10,6 @@ class ProjectSeeder extends Seeder
 {
     public function run(): void
     {
-        $nicolas = Partner::where('name', 'Nicolas Ninov')->first();
-        $mipe = Partner::where('name', 'Mipe Crew')->first();
-
         // $project = Project::create([
         //     'title' => 'Mipe Crew',
         //     'slug' => 'mipe-crew',
@@ -42,11 +39,6 @@ class ProjectSeeder extends Seeder
             'featured' => true,
         ]);
 
-        $project->partners()->attach([
-            $nicolas->id,
-            $mipe->id,
-        ]);
-
         $project = Project::create([
             'title' => 'Carros e Naves',
             'slug' => 'carros-e-naves',
@@ -57,11 +49,6 @@ class ProjectSeeder extends Seeder
             'image_alt' => 'Carros e Naves',
             'application_url' => null,
             'featured' => true,
-        ]);
-
-        $project->partners()->attach([
-            $nicolas->id,
-            $mipe->id,
         ]);
     }
 }
