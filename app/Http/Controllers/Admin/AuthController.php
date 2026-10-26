@@ -11,7 +11,7 @@ class AuthController extends Controller
 {
     public function index()
     {
-        return view('admin.auth.login');
+        return view('pages.admin.auth.login');
     }
 
     public function login(Request $request)
@@ -29,7 +29,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('admin.dashboard'));
+        return redirect()->intended(route('admin.index'));
     }
 
     public function logout(Request $request)

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
+use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use App\Models\Post;
 use App\Models\Project;
@@ -16,7 +17,7 @@ class HomeController extends Controller
         $projects = $this->getFeaturedProjects();
         $posts = $this->getLatestPosts();
 
-        return view('index', compact('services', 'faqs', 'projects', 'posts'));
+        return view('pages.site.index', compact('services', 'faqs', 'projects', 'posts'));
     }
 
     private function getServices()

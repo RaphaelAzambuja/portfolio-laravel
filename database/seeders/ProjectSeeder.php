@@ -2,85 +2,66 @@
 
 namespace Database\Seeders;
 
-use App\Models\Project;
 use App\Models\Partner;
+use App\Models\Project;
 use Illuminate\Database\Seeder;
 
 class ProjectSeeder extends Seeder
 {
     public function run(): void
     {
-        $raphael = Partner::where('name', 'Raphael Azambuja')->first();
-        $nicolas = Partner::where('name', 'Nicolas Pereira')->first();
+        $nicolas = Partner::where('name', 'Nicolas Ninov')->first();
         $mipe = Partner::where('name', 'Mipe Crew')->first();
-        $bite = Partner::where('name', 'Bite')->first();
+
+        // $project = Project::create([
+        //     'title' => 'Mipe Crew',
+        //     'slug' => 'mipe-crew',
+        //     'description' => 'Site institucional desenvolvido para apresentar os serviços de produção de conteúdo automotivo, valorizar o estoque de concessionárias e gerar oportunidades comerciais por meio de um portfólio visual de produções e chamadas para contato.',
+        //     'category' => 'Presença digital',
+        //     'year' => 2026,
+        //     'image' => 'images/projects/mipecrew.jpg',
+        //     'image_alt' => 'Mipe Crew',
+        //     'application_url' => 'https://mipecrew.com',
+        //     'featured' => true,
+        // ]);
+
+        // $project->partners()->attach([
+        //     $nicolas->id,
+        //     $mipe->id,
+        // ]);
 
         $project = Project::create([
-            'title' => 'Mipe Crew',
-            'slug' => 'mipe-crew',
-            'description' => 'Plataforma digital criada para apresentar soluções e serviços voltados ao setor automotivo.',
-            'category' => 'Presença digital',
+            'title' => 'MipeHub',
+            'slug' => 'mipehub',
+            'description' => 'Plataforma de gestão agnóstica de produtos, desenvolvida para facilitar a criação e manutenção de sites institucionais e sistemas para os clientes da Mipe Crew. Centraliza o gerenciamento de catálogos, estoques, integrações externas e emissão de notas fiscais em um único painel administrativo, permitindo atender diferentes empresas sem a necessidade de desenvolver e manter um painel separado para cada cliente.',
+            'category' => 'Sistema de gestão',
             'year' => 2026,
-            'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png',
-            'image_alt' => 'Mipe Crew',
-            'application_url' => 'https://mipecrew.com',
+            'image' => 'images/projects/mipehub.jpg',
+            'image_alt' => 'MipeHub',
+            'application_url' => null,
             'featured' => true,
         ]);
 
         $project->partners()->attach([
-            $raphael->id,
             $nicolas->id,
             $mipe->id,
         ]);
 
         $project = Project::create([
-            'title' => 'Sistema de gestão',
-            'slug' => 'sistema-de-gestao',
-            'description' => 'Sistema web desenvolvido para organizar produtos, estoque, pedidos e processos internos.',
-            'category' => 'Sistemas web',
+            'title' => 'Carros e Naves',
+            'slug' => 'carros-e-naves',
+            'description' => 'Plataforma de catálogo automotivo desenvolvida para apresentar veículos disponíveis para venda de forma organizada e intuitiva. Conta com formulário para avaliação de veículos, opções de financiamento e chamadas estratégicas para contato direto via WhatsApp, facilitando a comunicação com a equipe comercial e a conversão de visitantes em potenciais clientes.',
+            'category' => 'Presença digital',
             'year' => 2026,
-            'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png',
-            'image_alt' => 'Sistema de gestão',
+            'image' => 'images/projects/carrosenaves.jpg',
+            'image_alt' => 'Carros e Naves',
             'application_url' => null,
             'featured' => true,
         ]);
 
         $project->partners()->attach([
-            $raphael->id,
-        ]);
-
-        $project = Project::create([
-            'title' => 'Landing Page Comercial',
-            'slug' => 'landing-page-comercial',
-            'description' => 'Landing page desenvolvida para apresentar uma solução comercial e gerar novos contatos.',
-            'category' => 'Landing pages',
-            'year' => 2026,
-            'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png',
-            'image_alt' => 'Landing page comercial',
-            'application_url' => 'https://example.com',
-            'featured' => false,
-        ]);
-
-        $project->partners()->attach([
-            $raphael->id,
-            $bite->id,
-        ]);
-
-        $project = Project::create([
-            'title' => 'Aplicativo mobile',
-            'slug' => 'aplicativo-mobile',
-            'description' => 'Aplicativo mobile desenvolvido para facilitar o acesso dos clientes aos serviços da empresa.',
-            'category' => 'Aplicativos mobile',
-            'year' => 2025,
-            'image' => 'https://cdn.pixabay.com/photo/2021/02/18/20/52/goku-6028390_1280.png',
-            'image_alt' => 'Aplicativo mobile',
-            'application_url' => null,
-            'featured' => false,
-        ]);
-
-        $project->partners()->attach([
-            $raphael->id,
             $nicolas->id,
+            $mipe->id,
         ]);
     }
 }

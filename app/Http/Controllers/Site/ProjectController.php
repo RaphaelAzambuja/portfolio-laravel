@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
+use App\Http\Controllers\Controller;
 use App\Models\Project;
 
 class ProjectController extends Controller
@@ -12,6 +13,6 @@ class ProjectController extends Controller
             ->latest()
             ->get();
 
-        return view('pages.projects.index', compact('projects'));
+        return view('pages.site.projects.index', compact('projects'));
     }
 }

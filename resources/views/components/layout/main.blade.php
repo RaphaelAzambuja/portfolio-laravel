@@ -21,7 +21,7 @@
     <x-layout.header />
     @endif
 
-    <main class="font-body">
+    <main class="font-body ">
         {{ $slot }}
     </main>
 

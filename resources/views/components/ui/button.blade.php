@@ -44,7 +44,7 @@
     @endif
 
     {{ $attributes->except('href')->merge([
-        'class' => 'group relative inline-flex cursor-pointer rounded-md focus:outline-none w-fit ' . $variant['wrapper'],
+        'class' => 'relative md:inline-flex cursor-pointer rounded-md focus:outline-none w-fit h-fit ' . $variant['wrapper'],
     ]) }}
 >
     <span
@@ -55,10 +55,10 @@
             {{ $size }}
             {{ $variant['content'] }}
             transform transition-transform duration-150
-            group-hover:-translate-x-1
-            group-hover:-translate-y-1
-            group-active:-translate-x-1
-            group-active:-translate-y-1
+            hover:-translate-x-1
+            hover:-translate-y-1
+            active:-translate-x-1
+            active:-translate-y-1
         "
     >
         {{ $slot }}

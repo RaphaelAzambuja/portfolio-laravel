@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
+use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -11,13 +12,13 @@ class BlogController extends Controller
     {
         $posts = Post::paginate(9);
 
-        return view('pages.blogs.index', compact('posts'));
+        return view('pages.site.blogs.index', compact('posts'));
     }
 
     public function show($slug)
     {
         $post = Post::where('slug', $slug)->firstOrFail();
 
-        return view('pages.blogs.show', compact('post'));
+        return view('pages.site.blogs.show', compact('post'));
     }
 }

@@ -12,7 +12,7 @@
 <article {{ $attributes->merge(['class' => 'group']) }}>
     {{-- Imagem --}}
     <div class="relative overflow-hidden rounded-lg bg-30/5">
-        <div class="aspect-[16/9] overflow-hidden">
+        <div class="aspect-video overflow-hidden">
             <img
                 src="{{ $image }}"
                 alt="{{ $imageAlt }}"
@@ -53,30 +53,6 @@
         >
             Ver produto →
         </x-ui.button>
-
-        @if (count($participants))
-            <div class="flex items-center -space-x-2">
-                @foreach ($participants as $participant)
-                    <div
-                        class="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border-2 border-60 bg-30/10 text-[9px] font-bold text-30"
-                        title="{{ $participant['name'] }}"
-                    >
-                        @if (!empty($participant['image']))
-                            <img
-                                src="{{ $participant['image'] }}"
-                                alt="{{ $participant['name'] }}"
-                                class="h-full w-full object-cover"
-                            >
-                        @else
-                            {{ collect(explode(' ', $participant['name']))
-                                ->map(fn ($name) => strtoupper(substr($name, 0, 1)))
-                                ->take(2)
-                                ->join('') }}
-                        @endif
-                    </div>
-                @endforeach
-            </div>
-        @endif
     </div>
 </article>
 

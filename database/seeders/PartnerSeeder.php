@@ -11,30 +11,16 @@ class PartnerSeeder extends Seeder
     {
         Partner::insert([
             [
-                'name' => 'Raphael Azambuja',
-                'url' => null,
-                'image' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Nicolas Pereira',
-                'url' => null,
-                'image' => null,
+                'name' => 'Nicolas Ninov',
+                'url' => 'https://www.linkedin.com/in/nicolas-ninov/',
+                'image' => 'images/partners/nicolas_ninov.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'name' => 'Mipe Crew',
                 'url' => 'https://mipecrew.com',
-                'image' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Bite',
-                'url' => null,
-                'image' => null,
+                'image' => 'images/partners/mipe_crew.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
