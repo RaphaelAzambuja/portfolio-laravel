@@ -32,7 +32,7 @@ class HomeController extends Controller
 
     private function getFeaturedProjects()
     {
-        return Project::with('partners')->where('featured', true)->get();
+        return Project::where('featured', true)->get();
     }
 
     private function getLatestPosts()

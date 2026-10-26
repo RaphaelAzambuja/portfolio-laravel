@@ -6,8 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    public function partners()
-    {
-        return $this->belongsToMany(Partner::class);
-    }
+
 }

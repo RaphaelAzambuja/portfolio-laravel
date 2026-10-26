@@ -9,9 +9,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::with('partners')
-            ->latest()
-            ->get();
+        $projects = Project::latest()->get();
 
         return view('pages.site.projects.index', compact('projects'));
     }
