@@ -7,18 +7,21 @@
         <x-ui.cube class="bottom-[10%] right-[24%]" :delay="2800" :size="34" />
         <x-ui.cube class="top-[48%] right-[2%]" :delay="1800" :size="20" />
 
-        <div>
-            <h1 class="font-heading text-5xl font-bold text-30 md:text-7xl">
-                Escalando seu negócio com <span class="italic text-10">soluções digitais</span>
-            </h1>
+        <div class="flex flex-col gap-8">
+            <div>
+                <h1 class="font-heading text-5xl font-bold text-30 md:text-7xl">
+                    Escalando seu negócio com <span class="italic text-10">soluções digitais</span>
+                </h1>
 
-            <p class="mt-4 max-w-3xl text-base leading-7 text-30/75 md:text-lg">
-                Sou um artesão da web que transforma ideias em
-                <span class="font-bold text-30">softwares elegantes</span>,
-                feitos para <span class="font-bold text-30">impulsionar seu negócio</span> e <span class="font-bold text-30">gerar resultados</span>.
-            </p>
+                <p class="mt-4 max-w-3xl text-base leading-7 text-30/75 md:text-lg">
+                    Sou um artesão da web que transforma ideias em
+                    <span class="font-bold text-30">softwares elegantes</span>,
+                    feitos para <span class="font-bold text-30">impulsionar seu negócio</span> e <span
+                        class="font-bold text-30">gerar resultados</span>.
+                </p>
+            </div>
 
-            <x-ui.button href="{{ route('contact.index') }}" variant="primary" class="w-48 mt-10 sm:mt-10" size="lg">
+            <x-ui.button href="{{ route('contact.index') }}" variant="primary" class="w-48" size="lg">
                 Vamos conversar
             </x-ui.button>
         </div>
@@ -75,22 +78,16 @@
 
         <div class="grid gap-x-10 gap-y-14 md:grid-cols-2 lg:gap-x-16 lg:gap-y-20">
             @foreach ($projects as $project)
-                <x-ui.project-showcase
-                    :image="$project->image"
-                    :imageAlt="$project->image_alt"
-                    :category="$project->category"
-                    :year="$project->year"
-                    :title="$project->title"
-                    :description="$project->description"
-                    :href="$project->application_url"
-                />
+                <x-ui.project-showcase :image="$project->image" :imageAlt="$project->image_alt" :category="$project->category" :year="$project->year"
+                    :title="$project->title" :description="$project->description" :href="$project->application_url" />
             @endforeach
         </div>
 
-        <div class="mt-8 flex flex-col items-center gap-4 sm:mt-10 sm:flex-row">
+        <div class="mt-8 flex w-full max-w-sm flex-col items-center gap-4 md:max-w-none md:flex-row">
             <x-ui.button href="{{ route('projects.index') }}">
                 Ver mais cases
             </x-ui.button>
+
             <x-ui.button variant="secondary" href="{{ route('contact.index') }}">
                 Encontrar a solução ideal
             </x-ui.button>

@@ -49,9 +49,7 @@
 >
     <span
         class="
-            inline-flex w-full items-center justify-center
-            rounded-sm
-            text-center font-bold uppercase
+            inline-flex w-full items-center justify-center rounded-sm text-center font-bold uppercase
             {{ $size }}
             {{ $variant['content'] }}
             transform transition-transform duration-150

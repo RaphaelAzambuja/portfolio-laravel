@@ -17,32 +17,24 @@
         <nav class="hidden items-center justify-center gap-10 lg:flex">
             <x-layout.nav-item link="{{ route('home') }}" text="Início" :active="request()->routeIs('home')" />
             <x-layout.nav-item link="{{ route('about.index') }}" text="Sobre" :active="request()->routeIs('about.*')" />
-            <x-layout.nav-item link="{{ route('projects.index') }}" text="Produtos" :active="request()->routeIs('projects.*')" />
+            <x-layout.nav-item link="{{ route('projects.index') }}" text="Cases" :active="request()->routeIs('projects.*')" />
             <x-layout.nav-item link="{{ route('blog.index') }}" text="Blog" :active="request()->routeIs('blog.*')" />
             <x-layout.nav-item link="{{ route('contact.index') }}" text="Contato" :active="request()->routeIs('contact.*')" />
         </nav>
 
         <div class="hidden items-center justify-center gap-4 lg:flex">
-    <a
-        href="https://www.linkedin.com/in/SEU_USUARIO"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-        class="text-30 transition-colors hover:text-10"
-    >
-        <x-bi-linkedin class="size-5" />
-    </a>
+            <a href="https://www.linkedin.com/in/raphael-azambuja" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-30 transition-colors hover:text-10">
+                <x-bi-linkedin class="size-6" />
+            </a>
 
-    <a
-        href="https://github.com/SEU_USUARIO"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub"
-        class="text-30 transition-colors hover:text-10"
-    >
-        <x-bi-github class="size-5" />
-    </a>
-</div>
+            <a href="https://github.com/raphaelazambuja" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-30 transition-colors hover:text-10">
+                <x-bi-github class="size-6" />
+            </a>
+
+            <a href="https://www.instagram.com/azambuja.dev" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-30 transition-colors hover:text-10">
+                <x-bi-instagram class="size-6" />
+            </a>
+        </div>
 
         {{-- Hamburger --}}
         <button type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-md text-30 lg:hidden"
@@ -71,34 +63,33 @@
 
             <div class="flex flex-1 flex-col justify-center items-center gap-8">
                 <x-layout.nav-item link="{{ route('home') }}" text="Início" :active="request()->routeIs('home')" class="text-base" />
-                <x-layout.nav-item link="{{ route('about.index') }}" text="Sobre" :active="request()->routeIs('about.*')" class="text-base" />
-                <x-layout.nav-item link="{{ route('projects.index') }}" text="Produtos" :active="request()->routeIs('projects.*')" class="text-base" />
-                <x-layout.nav-item link="{{ route('blog.index') }}" text="Blog" :active="request()->routeIs('blog.*')" class="text-base" />
-                <x-layout.nav-item link="{{ route('contact.index') }}" text="Contato" :active="request()->routeIs('contact.*')" class="text-base" />
+                <x-layout.nav-item link="{{ route('about.index') }}" text="Sobre" :active="request()->routeIs('about.*')"
+                    class="text-base" />
+                <x-layout.nav-item link="{{ route('projects.index') }}" text="Cases" :active="request()->routeIs('projects.*')"
+                    class="text-base" />
+                <x-layout.nav-item link="{{ route('blog.index') }}" text="Blog" :active="request()->routeIs('blog.*')"
+                    class="text-base" />
+                <x-layout.nav-item link="{{ route('contact.index') }}" text="Contato" :active="request()->routeIs('contact.*')"
+                    class="text-base" />
             </div>
 
 
             <div class="mt-auto flex w-full justify-center gap-6">
-    <a
-        href="https://www.linkedin.com/in/SEU_USUARIO"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-        class="text-30 transition-colors hover:text-10"
-    >
-        <x-bi-linkedin class="size-6" />
-    </a>
+                <a href="https://www.linkedin.com/in/raphael-azambuja" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn" class="text-30 transition-colors hover:text-10">
+                    <x-bi-linkedin class="size-6" />
+                </a>
 
-    <a
-        href="https://github.com/SEU_USUARIO"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub"
-        class="text-30 transition-colors hover:text-10"
-    >
-        <x-bi-github class="size-6" />
-    </a>
-</div>
+                <a href="https://github.com/raphaelazambuja" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                    class="text-30 transition-colors hover:text-10">
+                    <x-bi-github class="size-6" />
+                </a>
+
+                <a href="https://www.instagram.com/azambuja.dev" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                    class="text-30 transition-colors hover:text-10">
+                    <x-bi-instagram class="size-6" />
+                </a>
+            </div>
         </nav>
     </aside>
 </header>

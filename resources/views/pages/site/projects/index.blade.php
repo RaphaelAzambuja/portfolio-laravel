@@ -94,74 +94,20 @@
                                     {{ $project->description }}
                                 </p>
 
-                            </div>
-
-                            {{-- Parceiros e link --}}
-                            <div class="flex flex-wrap items-center justify-between gap-5">
-
-                                @if ($project->partners->isNotEmpty())
-
-                                    <div class="flex items-center gap-3">
-
-                                        <div class="flex -space-x-2">
-
-                                            @foreach ($project->partners as $partner)
-
-                                                <div
-                                                    class="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border-2 border-60 bg-60"
-                                                    title="{{ $partner->name }}"
-                                                >
-
-                                                    @if ($partner->image)
-
-                                                        <img
-                                                            src="{{ $partner->image }}"
-                                                            alt="{{ $partner->name }}"
-                                                            class="h-full w-full object-cover"
-                                                        />
-
-                                                    @else
-
-                                                        <span class="text-xs font-bold text-30">
-                                                            {{ substr($partner->name, 0, 1) }}
-                                                        </span>
-
-                                                    @endif
-
-                                                </div>
-
-                                            @endforeach
-
-                                        </div>
-
-                                        <span class="text-xs font-semibold text-30/60">
-                                            {{ $project->partners->count() }}
-                                            {{ $project->partners->count() === 1 ? 'parceiro' : 'parceiros' }}
-                                        </span>
-
-                                    </div>
-
-                                @endif
-
                                 @if ($project->application_url)
-
-                                    <a
-                                        href="{{ $project->application_url }}"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="group inline-flex items-center gap-2 text-sm font-bold text-30 transition-colors duration-200 hover:text-10"
-                                    >
-                                        Ver produto
-
-                                        <span class="transition-transform duration-200 group-hover:translate-x-1">
-                                            →
-                                        </span>
-                                    </a>
-
+                                    <div class="mt-5">
+                                        <x-ui.button
+                                            href="{{ $project->application_url }}"
+                                            variant="outline"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Ver projeto →
+                                        </x-ui.button>
+                                    </div>
                                 @endif
 
                             </div>
-
                         </div>
 
                     </article>
