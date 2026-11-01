@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ $title ?? 'Raphael Azambuja' }}</title>
+    <title>{{ $title ?? 'Raphael Azambuja - Soluções Digitais' }}</title>
 
     <meta name="description" content="{{ $description ?? 'Desenvolvimento de software sob medida para empresas.' }}">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@yield('canonical', 'https://raphaelazambuja.com.br' . request()->getPathInfo())">
 
     {{-- Open Graph: compartilhamento em redes sociais --}}
     <meta property="og:type" content="website">
